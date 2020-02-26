@@ -1,0 +1,22 @@
+<h1>Restaurants#new</h1>
+<!-- app/views/restaurants/_form.html.erb -->
+<%= simple_form_for(@restaurant) do |f| %>
+  <% if @restaurant.errors.any? %>
+    <div class="errors-container">
+      <ul>
+        <% @restaurant.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= f.input :name, label: 'Name', required: false%>
+    <%= f.input :category, label: 'Category', required: false%>
+    <%= f.input :address, label: 'Address', required: false%>
+    <%= f.input :phone_number, label: 'Phone Number', required: false%>
+    <%= f.button :submit %>
+  </div>
+  <!-- [...] all the fields -->
+<% end %>
